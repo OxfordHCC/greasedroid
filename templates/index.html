@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="billing">
+    <head>
+        <link href="{{ url_for('static', filename='css/minimal-ui.css') }}" rel="stylesheet" />
+        <link href="{{ url_for('static', filename='css/app.css') }}" rel="stylesheet" />
+        <style type="text/css">
+            .cc-cell {
+                float: left;
+            }
+            .cc-cell-last {
+                clear: both;
+            }
+            .tooltip {
+                position: relative;
+                display: inline-block;
+                border-bottom: 1px dotted black;
+            }
+                .tooltip .tooltiptext {
+                    visibility: hidden;
+                    width: auto;
+                    background-color: #555;
+                    color: #fff;
+                    text-align: center;
+                    padding: 5px 10px;
+                    border-radius: 6px;
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 0%;
+                    left: 0%;
+                    margin-left: 105%;
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                }
+                .tooltip:hover .tooltiptext {
+                    visibility: visible;
+                    opacity: 1;
+                }
+        </style>
+    </head>
+    <body>
+        <div id="current-cc" class="container" ng-controller="currentCardCtrl">
+            <h3 class="cl-blue">GreaseDroid</h3>
+            <p>Instructions: Select an application, select patches, let greasedroid patch the app, and happily install the patched apk on your device.</p>
+            {% if app_selected == False %}
+            <form action="" method="GET">
+                <select class="search" id="states[]" name="app" style="display: inline-block;">
+                    {% for x in apps_available %}
+                    <option value="{{x}}">{{x}}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="cc-change" style="display: inline-block; width:9.29%;" value="Search">
+                    Select
+                </button>
+            </form>
+            {% else %}
+            <div style="display: inline-block;">
+                <b style="display: inline-block;">App selected: <p style="display: inline-block; color:#11AAB0;">{{app}}</p></b>
+                <form action="" method="GET" style="display: inline-block; padding-left:15px;">
+                    <input type="hidden" id="reset" name="reset" class="form-control" style="display: inline-block;" value="reset">
+                    <button type="submit" class="cc-change" style="display: inline-block; width:auto;" value="Reset">
+                        Reset
+                    </button>
+                </form>
+            </div>
+            {% if patches_selected == False %}
+            <div>
+                <form action="" method="GET">
+                    {% for i in range(patches_available|length) %}
+                    <input type="checkbox" name={{patches_available[i]}} value={{patches_available[i]}}>
+                    <label class="tooltip" for={{patches_available[i]}}> {{patches_available[i]}}<span class="tooltiptext">{{patches_available_desc[i]}}</span></label><br>
+                    {% endfor %}
+                    <input type="submit" style="width: 40%;" value="Patch">
+                </form>
+            </div>
+            {% if dl_show == True %}
+            <a href={{"http://127.0.0.1:5000/apk/"+app}}>[Download]</a>
+            {% endif %}
+            {% endif %}
+            {% endif %}
+
+        </div>
+
+    <script src="{{ url_for('static', filename='js/angular.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>

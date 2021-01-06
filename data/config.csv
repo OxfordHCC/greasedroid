@@ -1,0 +1,8 @@
+,patch_category,patch_name,patch_desc
+0,general,remove_permissions,Remove hardware and software permissions
+1,general,remove_adid,Remove device id
+2,general,remove_location,Remove location access
+3,twitter,fix_rebuild_failure,e.g.
+4,twitter,inactivate_notifications_button,e.g.
+5,twitter,remove_status_updates,e.g.
+6,twitter,remove_unread_notification_count,e.g.

@@ -1,0 +1,15 @@
+diff -u -r com.twitter.android_original/res/drawable/bg_unread_count_pill.xml com.twitter.android/res/drawable/bg_unread_count_pill.xml
+--- com.twitter.android_original/res/drawable/bg_unread_count_pill.xml	2020-12-03 17:12:44.430698288 +0100
++++ com.twitter.android/res/drawable/bg_unread_count_pill.xml	2020-12-03 17:32:45.774152914 +0100
+@@ -3,9 +3,9 @@
+   xmlns:android="http://schemas.android.com/apk/res/android">
+     <item>
+         <shape android:shape="rectangle">
+-            <stroke android:width="@dimen/badge_number_background_stroke_size" android:color="?coreColorToolbarBg" />
++            <stroke android:width="@dimen/badge_number_background_stroke_size" android:color="@android:color/transparent" />
+             <corners android:radius="14.0dip" />
+-            <solid android:color="@color/twitter_blue" />
++            <solid android:color="@android:color/transparent" />
+             <padding android:left="6.0dip" android:top="0.0dip" android:right="6.0dip" android:bottom="0.0dip" />
+         </shape>
+     </item>

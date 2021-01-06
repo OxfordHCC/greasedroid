@@ -1,0 +1,9 @@
+--- com.twitter.android_original/res/layout/view_fleetline.xml	2020-12-03 17:12:42.514704784 +0100
++++ com.twitter.android/res/layout/view_fleetline.xml	2020-12-02 19:09:05.341117077 +0100
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout android:background="?coreColorAppBackground" android:layout_width="fill_parent" android:layout_height="wrap_content"
++<FrameLayout android:background="?coreColorAppBackground" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content"
+   xmlns:android="http://schemas.android.com/apk/res/android">
+     <androidx.recyclerview.widget.RecyclerView android:id="@id/fleetline_recyclerview" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:importantForAccessibility="noHideDescendants" android:paddingStart="6.0dip" android:paddingEnd="6.0dip" />
+     <ViewStub android:id="@id/fleetline_error_stub" android:layout="@layout/error_fleetline" android:inflatedId="@id/fleetline_failed_to_load" android:layout_width="wrap_content" android:layout_height="wrap_content" />
