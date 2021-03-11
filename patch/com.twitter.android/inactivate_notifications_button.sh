@@ -29,7 +29,7 @@ for dir in $1/*/; do
 
         # check if file exists
         if [ -f $path ]; then
-            echo $path
+            echo "Patching file $path"
 
             line=1
             success=-1
@@ -60,7 +60,7 @@ for dir in $1/*/; do
 
             sed -i "${insertion}i""${PATCH}""" $path
 
-            echo $insertion
+            echo "Patched at line $insertion"
         fi
     fi
 done

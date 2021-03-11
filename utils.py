@@ -21,6 +21,7 @@ def build(apk_filename="TrackerControl-githubRelease-latest.apk"):
 
 def sign(apk_filename="TrackerControl-githubRelease-latest.apk"):
     print(os.getcwd())
-    subprocess.run("jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore release-key.keystore -keypass 23599331 -storepass 23599331 ./"+str(apk_filename[:-4])+"/dist/"+str(apk_filename)+" alias_name", shell=True)
+    subprocess.run("zipalign -f -p 4 ./"+str(apk_filename[:-4])+"/dist/"+str(apk_filename)+" ./"+str(apk_filename[:-4])+"/dist/"+str(apk_filename[:-4])+"-aligned.apk", shell=True)
+    subprocess.run("apksigner sign --ks release-key.keystore -ks-pass pass:23599331 --key-pass pass:23599331 ./"+str(apk_filename[:-4])+"/dist/"+str(apk_filename[:-4])+"-aligned.apk", shell=True)
     print("[+] Signed")
-    print("[>] Exported: ./"+str(apk_filename[:-4])+"/dist/"+str(apk_filename))
+    print("[>] Exported: ./"+str(apk_filename[:-4])+"/dist/"+str(apk_filename[:-4])+"-aligned.apk")

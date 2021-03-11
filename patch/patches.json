@@ -1,0 +1,65 @@
+[
+    {
+        "id": 0,
+        "title": "Block Device ID Access",
+        "file": "_general/remove_adid.sh",
+        "types": ["code"],
+        "apps": [],
+        "tested_apktools": [],
+        "available": true
+    },
+    {
+        "id": 1,
+        "title": "Block Location Access (slow)",
+        "file": "_general/remove_location.sh",
+        "types": ["code"],
+        "apps": [],
+        "tested_apktools": [],
+        "available": true
+    },
+    {
+        "id": 2,
+        "title": "Remove IAP (not working, !MUST NOT BE USED WITH THIRD-PARTY APPS!)",
+        "file": "_general/remove_iap.sh",
+        "types": ["code"],
+        "apps": [],
+        "tested_apktools": [],
+        "available": false
+    },
+    {
+        "id": 3,
+        "title": "Remove Split APK (Expert)",
+        "file": "_general/remove_split_apk.sh",
+        "types": ["code"],
+        "apps": ["com.twitter.android"],
+        "tested_apktools": [],
+        "available": false
+    },
+    {
+        "id": 7,
+        "title": "De-Activate Notifications Button",
+        "file": "com.twitter.android/inactivate_notifications_button.sh",
+        "types": ["code", "res"],
+        "apps": ["com.twitter.android"],
+        "tested_apktools": [],
+        "available": true
+    },
+    {
+        "id": 8,
+        "title": "Remove Stories",
+        "file": "com.twitter.android/remove_status_updates.sh",
+        "types": ["res"],
+        "apps": ["com.twitter.android"],
+        "tested_apktools": [],
+        "available": true
+    },
+    {
+        "id": 9,
+        "title": "Remove Notification Count",
+        "file": "com.twitter.android/remove_unread_notification_count.sh",
+        "types": ["res"],
+        "apps": ["com.twitter.android"],
+        "tested_apktools": [],
+        "available": true
+    }
+]
