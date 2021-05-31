@@ -1,10 +1,10 @@
-# GreaseDroid
+# AppGenie (previously called 'GreaseDroid')
 
 **Note that this repository is solely meant be used for research purposes. It is NOT intended for piracy and other non-legal uses.**
 
 <i>Authors</i>: [Konrad Kollnig](https://github.com/kasnder), [Siddhartha Datta](https://github.com/dattasiddhartha)
 
-GreaseDroid aims to make it easier for Android users to make their apps fit their special needs. This repository provides a proof-of-concept of the paradigms behind GreaseDroid.
+AppGenie aims to make it easier for Android users to make their apps fit their special needs. This repository provides a proof-of-concept of the paradigms behind AppGenie.
 
 Before using, please change the provided signing key `release-key.keystore`.
 
@@ -12,7 +12,7 @@ Before using, please change the provided signing key `release-key.keystore`.
 keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
 ```
 
-### GreaseDroid web application
+### AppGenie web application
 
 #### Usage:
 
