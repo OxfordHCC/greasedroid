@@ -1,4 +1,4 @@
-# AppGenie (previously called 'GreaseDroid')
+# GreaseDroid / AppGenie
 
 **Note that this repository is solely meant be used for research purposes. It is NOT intended for piracy and other non-legal uses.**
 
